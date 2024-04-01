@@ -1,0 +1,44 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--dark-blue);
+    max-width: fit-content;
+    margin: auto;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.inputFieldBox{
+    display: flex;
+    align-items: center;
+}
+
+.inputFieldBox label{
+    width: 100px;
+}
+
+.inputFieldBoxXL label{
+    width: 10rem;
+}
+
+.inputFieldBox select{
+    flex: 1;
+    background-color: var(--light);
+    color: var(--dark-blue);
+    font-family: "Inter";
+    border: none;
+    border: 1px solid var(--dark-blue);
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.inputFieldBox input{
+    background-color: var(--light);
+    font-family: "Inter";
+    border: none;
+    border: 1px solid var(--dark-blue);
+    padding: 5px 10px;
+    border-radius: 4px;
+}

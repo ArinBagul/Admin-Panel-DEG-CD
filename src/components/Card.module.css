@@ -1,0 +1,47 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    background: var(--blue-gradient);
+    width: 300px;
+    padding: 30px;
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.cardTitle{
+    color: var(--light);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.btnContainer{
+    display: flex;
+    gap: 15px;
+}
+
+.primaryBtn{
+    background-color: var(--light);
+    padding: 4px 8px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.primaryBtnTxt{
+    color: var(--dark-blue);
+}
+
+.secondaryBtn{
+    /* background-color: var(--light); */
+    border: 1px solid var(--light);
+    padding: 4px 8px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.secondaryBtnTxt{
+    color: var(--light);
+}

@@ -1,0 +1,20 @@
+
+.primaryBtn{
+    background-color: var(--light);
+    padding: 4px 8px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.primaryBtnTxt{
+    color: var(--dark-blue);
+}
+
+.filled{
+    background-color: var(--dark-blue);
+}
+
+.filledBtnTxt{
+    color: var(--light);
+}

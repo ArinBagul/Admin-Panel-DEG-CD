@@ -1,0 +1,59 @@
+.appContainer {
+  /* background-color: lightblue; */
+  display: flex;
+}
+
+.pageContainer{
+  /* background-color: lightcyan; */
+  
+  flex: 1;
+  padding: 50px;
+  margin-left: 16rem;
+}
+
+.primaryAddBtn{
+  font-family: "Inter";
+  font-size: 14px;
+  color: var(--light);
+  background: var(--blue-gradient);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 2px 7px 22px #004268c4;
+  transition: 100ms ease-in-out;
+}
+
+.primaryAddBtn:active{
+  box-shadow: none;
+}
+
+#sidebar a.active {
+  font-weight: 700;
+  background-color: var(--light);
+  color: var(--dark-blue);
+  -webkit-animation: shadow-inset-right 0.4s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: shadow-inset-right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes shadow-inset-right {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: -4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: -4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  }
+}
+@keyframes shadow-inset-right {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: -4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: -4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  }
+}

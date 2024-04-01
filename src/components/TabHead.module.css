@@ -1,0 +1,7 @@
+.tabHeadingTxt{
+    color: var(--dark-blue);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

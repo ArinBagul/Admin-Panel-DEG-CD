@@ -1,0 +1,17 @@
+.wlcmTxt{
+    color: var(--dark-blue);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.headingTxt{
+    color: var(--dark-blue);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.highlightTxt{
+    color: var(--primary-blue);
+}

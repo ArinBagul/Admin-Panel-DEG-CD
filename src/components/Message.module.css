@@ -1,0 +1,10 @@
+.msgContainer{
+    background-color: #00C17C;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.msgTxt{
+    color: var(--light);
+}

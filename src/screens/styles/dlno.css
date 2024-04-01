@@ -1,0 +1,57 @@
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .form-container input,
+  .form-container select,
+  .form-container button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .team-list {
+    margin-top: 10px;
+  }
+  
+  .team-list span {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+  }
+
+  .selected-teams-container {
+    margin-top: 10px;
+  }
+  
+  .selected-teams-container span {
+    display: inline-block;
+    background-color: #9b9b9b;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }

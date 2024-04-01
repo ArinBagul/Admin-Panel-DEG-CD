@@ -1,0 +1,17 @@
+.dashboardContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.cardsContainer{
+    display: flex;
+    gap: 50px;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+    .cardsContainer{
+        flex-direction: column;
+    }
+}
