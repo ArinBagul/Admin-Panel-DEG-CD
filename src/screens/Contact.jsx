@@ -1,20 +1,20 @@
-import React from 'react'
-import TabHead from '../components/TabHead'
-import Card from '../components/Card'
+import React from "react";
+import TabHead from "../components/TabHead";
+import Card from "../components/Card";
 
-import styles from "../screens/styles/Dashboard.module.css"
+import styles from "../screens/styles/Dashboard.module.css";
 
 const Contact = () => {
   return (
-    <div className='contentContainer'>
+    <div className="contentContainer">
       <TabHead tabHead="Manage Contacts" />
       <div className={styles.cardsContainer}>
         <Card target="dlno" displayName="DLNO" />
-        <Card target="dlno" displayName="PS" />
+        <Card target="ps" displayName="PS" />
         {/* <Card target="dlno" displayName="DLNO" /> */}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

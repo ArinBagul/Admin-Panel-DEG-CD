@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { getDatabase, ref, get, push } from "firebase/database";
+import Message from "../components/Message";
 import "./styles/dlno.css";
 
 const AddDlno = () => {
+  const [msg, setMsg] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     position: "",
@@ -61,6 +63,7 @@ const AddDlno = () => {
     // firebase.database().ref('users').push(formData);
     const db = getDatabase();
     push(ref(db, "dlno"), formData);
+    setMsg(true);
     setFormData({
       name: "",
       position: "",
@@ -69,53 +72,77 @@ const AddDlno = () => {
       role: "",
       team: [],
     });
+    setTimeout(() => {
+      setMsg(false);
+    }, 5000);
   };
 
   return (
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        <input
-          required
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Name"
-        />
-        <input
-          required
-          type="text"
-          name="position"
-          value={formData.position}
-          onChange={handleChange}
-          placeholder="Position"
-        />
-        <input
-          required
-          type="text"
-          name="office"
-          value={formData.office}
-          onChange={handleChange}
-          placeholder="Office"
-        />
-        <input
-          required
-          type="text"
-          name="mobileNumber"
-          value={formData.mobileNumber}
-          onChange={handleChange}
-          placeholder="Mobile Number"
-        />
-        <input
-          required
-          type="text"
-          name="role"
-          value={formData.role}
-          onChange={handleChange}
-          placeholder="Role"
-        />
+    <div>
+      <form onSubmit={handleSubmit} className="formContainer">
+        {msg ? <Message item="Contact" /> : null}
+        <div className="inputFieldBox inputFieldBoxXL">
+          <label htmlFor="name">Name</label>
+          <input
+            required
+            id="name"
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Name"
+          />
+        </div>
+
+        <div className="inputFieldBox inputFieldBoxXL">
+          <label htmlFor="position">Position</label>
+          <input
+            required
+            type="text"
+            name="position"
+            value={formData.position}
+            onChange={handleChange}
+            placeholder="Position"
+          />
+        </div>
+
+        <div className="inputFieldBox inputFieldBoxXL">
+          <label htmlFor="office">Office</label>
+          <input
+            required
+            type="text"
+            name="office"
+            value={formData.office}
+            onChange={handleChange}
+            placeholder="Office"
+          />
+        </div>
+
+        <div className="inputFieldBox inputFieldBoxXL">
+          <label htmlFor="mobileNumber">Mobile Number</label>
+          <input
+            required
+            type="text"
+            name="mobileNumber"
+            value={formData.mobileNumber}
+            onChange={handleChange}
+            placeholder="Mobile Number"
+          />{" "}
+        </div>
+
+        <div className="inputFieldBox inputFieldBoxXL">
+          <label htmlFor="role">Role</label>
+          <input
+            required
+            type="text"
+            name="role"
+            value={formData.role}
+            onChange={handleChange}
+            placeholder="Role"
+          />
+        </div>
+
         <select
-          className="team-dropdown"
           value={selectedTeam}
           onChange={handleTeamChange}
         >
@@ -128,17 +155,17 @@ const AddDlno = () => {
         </select>
         <button
           type="button"
-          className="add-team-button"
+          className="addTeamBtn"
           onClick={handleAddTeam}
         >
           Add Team
         </button>
         <div className="selected-teams-container">
-            {formData.team.map((teamName, index) => (
+          {formData.team.map((teamName, index) => (
             <span key={index}>{teamName}</span>
-            ))}
+          ))}
         </div>
-        <button type="submit" className="submit-button">
+        <button type="submit" className="primaryAddBtn">
           Submit
         </button>
       </form>

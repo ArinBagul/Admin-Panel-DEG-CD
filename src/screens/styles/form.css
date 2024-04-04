@@ -42,3 +42,34 @@
     padding: 5px 10px;
     border-radius: 4px;
 }
+
+.formContainer select{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    font-family: 'Inter';
+    background-color: var(--light);
+}
+
+.selected-teams-container{
+    width: 25rem;
+}
+
+.addTeamBtn{
+    cursor: pointer;
+    border: 1.5px solid var(--dark-blue);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-family: 'Inter';
+    font-size: 14px;
+    color: var(--dark-blue);
+    font-weight: 500;
+}
+
+.addTeamBtn:hover{
+    background-color: var(--dark-blue);
+    color: var(--light);
+}
