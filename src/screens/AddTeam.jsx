@@ -53,7 +53,7 @@ export const AddTeam = () => {
           id="priority"
           type="number"
           required
-          placeholder="Enter priority (1-10)"
+          placeholder="Enter priority"
           value={priority}
           onChange={(data) => setPriority(data.target.value)}
         />

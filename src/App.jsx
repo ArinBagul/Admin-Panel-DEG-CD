@@ -23,6 +23,10 @@ import AddDlno from "./screens/AddDlno";
 import Dlno from "./screens/Dlno";
 import AddPso from "./screens/AddPso";
 import Pso from "./screens/Pso";
+import Ac from "./screens/Ac";
+import AddAc from "./screens/AddAc";
+import Impo from "./screens/Impo";
+import AddImpo from "./screens/AddImpo";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -69,10 +73,23 @@ function App() {
 
             <Route path="/contact/dlno" element={<Dlno />} />
             <Route path="/contact/ps" element={<Pso />} />
+            <Route path="/contact/ac" element={<Ac />} />
+            <Route path="/contact/impo" element={<Impo />} />
+
+            <Route path="/contact/add/dlno" element={<Dlno />} />
+            <Route path="/contact/add/ps" element={<Pso />} />
+            <Route path="/contact/add/ac" element={<Ac />} />
+            <Route path="/contact/add/impo" element={<Impo />} />
+
             <Route path="/contact/dlno/add" element={<AddDlno />} />
-            <Route path="/contact/add/dlno/add" element={<AddDlno />} />
             <Route path="/contact/ps/add" element={<AddPso />} />
+            <Route path="/contact/ac/add" element={<AddAc />} />
+            <Route path="/contact/impo/add" element={<AddImpo />} />
+
+            <Route path="/contact/add/dlno/add" element={<AddDlno />} />
             <Route path="/contact/add/ps/add" element={<AddPso />} />
+            <Route path="/contact/add/ac/add" element={<AddAc />} />
+            <Route path="/contact/add/impo/add" element={<AddImpo />} />
           </Routes>
         </div>
       </div>

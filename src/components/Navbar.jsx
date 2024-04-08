@@ -11,16 +11,16 @@ function Navbar() {
           <NavLink to="/">Dashboard</NavLink>
         </li>
         <li>
-          <NavLink to="/place">Place</NavLink>
+          <NavLink to="/place">Manage AC</NavLink>
         </li>
         <li>
           <NavLink to="/ps">Polling Station</NavLink>
         </li>
         <li>
-          <NavLink to="/team">Team</NavLink>
+          <NavLink to="/team">Manage Team</NavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/contact">Manage Contact</NavLink>
         </li>
       </ul>
     </nav>

@@ -54,7 +54,7 @@ const Place = () => {
 
   return (
     <div className="contentContainer">
-      <TabHead tabHead="Manage Place" />
+      <TabHead tabHead="Manage AC" />
       <br />
       <Button style="margin-top: 10px" />
       <div className="tableContainer">
@@ -62,7 +62,7 @@ const Place = () => {
           <thead>
             <tr>
               <th>District</th>
-              <th>Place</th>
+              <th>AC Name</th>
               <th>PC</th>
               <th>AC</th>
               <th>Action</th>

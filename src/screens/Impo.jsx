@@ -4,31 +4,30 @@ import { getDatabase, ref, get, remove } from "firebase/database";
 import TabHead from "../components/TabHead";
 import Button from "../components/Button";
 
-const Dlno = () => {
+function Impo() {
+
+
   const [data, setData] = useState([]);
   const db = getDatabase();
 
   useEffect(() => {
     const fetchData = async () => {
-      const dlnoRef = ref(db, "dlno"); // Assuming 'dlno' is Firebase database node
+      const impoRef = ref(db, "impo"); // Assuming 'dlno' is Firebase database node
 
       try {
-        const snapshot = await get(dlnoRef);
+        const snapshot = await get(impoRef);
         const dataSnapshot = snapshot.val();
         const formattedData = [];
 
         // Convert dataSnapshot to an array
-        Object.keys(dataSnapshot).forEach((dlnoKey) => {
-          const dlnoData = dataSnapshot[dlnoKey];
-          // console.log(dlnoData.team);
-          formattedData.push({
-            id: dlnoKey,
-            name: dlnoData.name,
-            team: dlnoData.team,
-            role: dlnoData.role,
-            position: dlnoData.position,
-            mobileNumber: dlnoData.mobileNumber,
-          });
+        Object.keys(dataSnapshot).forEach((key) => {
+          const impoData = dataSnapshot[key];
+            formattedData.push({
+              id: key,
+              name: impoData.name,
+              designation: impoData.designation,
+              mobileNumber: impoData.mobileNumber,
+            });
         });
 
         // Update state with formatted data
@@ -44,38 +43,35 @@ const Dlno = () => {
   const handleDelete = async (id) => {
     try {
       // console.log(id);
-      await remove(ref(db, `dlno/${id}`)); // Remove the item from Firebase
+      await remove(ref(db, `ac/${id}`)); // Remove the item from Firebase
       setData(data.filter((item) => item.id !== id)); // Update state to remove the item from the table
     } catch (error) {
       console.error("Error deleting item:", error);
     }
   };
 
+
   return (
     <div className="contentContainer">
-      <TabHead tabHead="Manage DLNO" />
+      <TabHead tabHead="Manage AC" />
       <br />
       <Button style="margin-top: 10px" />
       <div className="tableContainer">
         <table>
           <thead>
             <tr>
-              <th>Team</th>
               <th>Name</th>
-              <th>Position</th>
-              <th>Number</th>
-              <th>Role</th>
+              <th>Mobile No.</th>
+              <th>Designation</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             {data.map((item, index) => (
               <tr key={index}>
-                <td>{item.team}</td>
                 <td>{item.name}</td>
-                <td>{item.position}</td>
                 <td>{item.mobileNumber}</td>
-                <td>{item.role}</td>
+                <td>{item.designation}</td>
                 <td>
                   <button
                     className="deleteBtn"
@@ -102,7 +98,7 @@ const Dlno = () => {
         </table>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dlno;
+export default Impo

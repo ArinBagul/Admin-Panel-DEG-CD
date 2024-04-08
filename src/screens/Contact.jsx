@@ -10,7 +10,9 @@ const Contact = () => {
       <TabHead tabHead="Manage Contacts" />
       <div className={styles.cardsContainer}>
         <Card target="dlno" displayName="DLNO" />
-        <Card target="ps" displayName="PS" />
+        <Card target="ps" displayName="PSO" />
+        <Card target="ac" displayName="AC" />
+        <Card target="impo" displayName="IMP Officers" />
         {/* <Card target="dlno" displayName="DLNO" /> */}
       </div>
     </div>

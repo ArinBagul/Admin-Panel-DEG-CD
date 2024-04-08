@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getDatabase, ref, get } from "firebase/database";
+import { getDatabase, ref, get, remove } from "firebase/database";
 
 import TabHead from "../components/TabHead";
 import Button from "../components/Button";
@@ -29,6 +29,16 @@ const Team = () => {
     }
   }, []);
 
+  const handleDelete = async (id) => {
+    try {
+      console.log(id);
+      await remove(ref(database, `team/${id}`)); // Remove the item from Firebase
+      setTeams(teams.filter((item) => item.id !== id)); // Update state to remove the item from the table
+    } catch (error) {
+      console.error("Error deleting item:", error);
+    }
+  };
+
   return (
     <div className="contentContainer">
       <TabHead tabHead="Manage Teams" />
@@ -53,7 +63,7 @@ const Team = () => {
                 <td>
                   <button
                     className="deleteBtn"
-                    onClick={() => handleDelete(item.district, item.id)}
+                    onClick={() => handleDelete(team.id)}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

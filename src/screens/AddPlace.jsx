@@ -40,7 +40,7 @@ const AddPlace = () => {
 
   return (
     <div className="formContainer">
-      {msg ? <Message item="Place" /> : null}
+      {msg ? <Message item="AC" /> : null}
       <div className="inputFieldBox">
         <label htmlFor="district">District</label>
         <input
@@ -53,12 +53,12 @@ const AddPlace = () => {
         />
       </div>
       <div className="inputFieldBox">
-        <label htmlFor="place">Place</label>
+        <label htmlFor="place">AC Name</label>
         <input
           id="place"
           type="text"
           required
-          placeholder="Name of Place"
+          placeholder="AC Name"
           value={Place}
           onChange={(data) => setPlace(data.target.value)}
         />

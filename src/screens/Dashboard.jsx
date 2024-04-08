@@ -8,10 +8,10 @@ const Dashboard = () => {
     <div className={styles.dashboardContainer}>
       <Heading />
       <div className={styles.cardsContainer}>
-        <Card target="place" displayName="Place" />
+        <Card target="place" displayName="Manage AC" />
         <Card target="ps" displayName="Polling Station" />
-        <Card target="team" displayName="Team" />
-        <Card target="contact" displayName="Contact" />
+        <Card target="team" displayName="Manage Team" />
+        <Card target="contact" displayName="Manage Contact" />
       </div>
     </div>
   );
