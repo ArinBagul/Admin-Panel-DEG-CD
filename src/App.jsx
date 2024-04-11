@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
@@ -27,72 +27,102 @@ import Ac from "./screens/Ac";
 import AddAc from "./screens/AddAc";
 import Impo from "./screens/Impo";
 import AddImpo from "./screens/AddImpo";
+import LoginScreen from "./screens/LoginScreen";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const apiKey = import.meta.env.VITE_API_KEY;
+const authDomain = import.meta.env.VITE_AUTH_DOMAIN;
+const databaseURL = import.meta.env.VITE_DATABASE_URL;
+const projectId = import.meta.env.VITE_PROJECT_ID;
+const storageBucket = import.meta.env.VITE_STORAGE_BUCKET;
+const messagingSenderId = import.meta.env.VITE_MESSAGING_SENDER_ID;
+const appId = import.meta.env.VITE_APP_ID;
+const measurementId = import.meta.env.VITE_MEASUREMENT_ID;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCSCJZYUQvQZ7_ZP_nSUqbqGtFVz6WF-Ho",
-  authDomain: "egovernance-cf66d.firebaseapp.com",
-  databaseURL: "https://egovernance-cf66d-default-rtdb.firebaseio.com",
-  projectId: "egovernance-cf66d",
-  storageBucket: "egovernance-cf66d.appspot.com",
-  messagingSenderId: "22310314453",
-  appId: "1:22310314453:web:1cb78be2d297389d0f9d5c",
-  measurementId: "G-D7TZ864CW3",
+  apiKey: apiKey,
+  authDomain: authDomain,
+  databaseURL: databaseURL,
+  projectId: projectId,
+  storageBucket: storageBucket,
+  messagingSenderId: messagingSenderId,
+  appId: appId,
+  measurementId: measurementId,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 const database = getDatabase(app);
+// console.log(import.meta.env.VITE_API_KEY)
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [erMsg, setErMsg] = useState(false)
+
+  const handleLogin = (userData) => {
+    // Here you can perform any action with the login data received from the child component
+    // console.log("Received login data:", userData.username);
+    // For demonstration purposes, I'm just setting isLoggedIn to true
+    if (userData.username === import.meta.env.VITE_USERNAME && userData.password === import.meta.env.VITE_PASSWORD) {
+      setIsLoggedIn(true);
+    } else{
+      setErMsg(true);
+    }
+  };
+
   return (
     <BrowserRouter>
-      <div className="appContainer">
-        <Navbar />
-        <div className="pageContainer">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/home" element={<Dashboard />} />
+      {!isLoggedIn ? (
+        <LoginScreen onLogin={handleLogin} isError={erMsg} />
+      ) : (
+        <div className="appContainer">
+          <Navbar />
+          <div className="pageContainer">
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/home" element={<Dashboard />} />
 
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/ps" element={<Ps />} />
-            <Route path="/team" element={<Team />} />
-            <Route path="/place" element={<Place />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/ps" element={<Ps />} />
+              <Route path="/team" element={<Team />} />
+              <Route path="/place" element={<Place />} />
 
-            <Route path="/*" element={<FileNotFound />} />
+              <Route path="/*" element={<FileNotFound />} />
 
-            <Route path="/place/add" element={<AddPlace />} />
-            <Route path="/ps/add" element={<AddPs />} />
-            <Route path="/team/add" element={<AddTeam />} />
-            <Route path="/contact/add" element={<Contact />} />
+              <Route path="/place/add" element={<AddPlace />} />
+              <Route path="/ps/add" element={<AddPs />} />
+              <Route path="/team/add" element={<AddTeam />} />
+              <Route path="/contact/add" element={<Contact />} />
 
-            <Route path="/contact/dlno" element={<Dlno />} />
-            <Route path="/contact/ps" element={<Pso />} />
-            <Route path="/contact/ac" element={<Ac />} />
-            <Route path="/contact/impo" element={<Impo />} />
+              <Route path="/contact/dlno" element={<Dlno />} />
+              <Route path="/contact/ps" element={<Pso />} />
+              <Route path="/contact/ac" element={<Ac />} />
+              <Route path="/contact/impo" element={<Impo />} />
 
-            <Route path="/contact/add/dlno" element={<Dlno />} />
-            <Route path="/contact/add/ps" element={<Pso />} />
-            <Route path="/contact/add/ac" element={<Ac />} />
-            <Route path="/contact/add/impo" element={<Impo />} />
+              <Route path="/contact/add/dlno" element={<Dlno />} />
+              <Route path="/contact/add/ps" element={<Pso />} />
+              <Route path="/contact/add/ac" element={<Ac />} />
+              <Route path="/contact/add/impo" element={<Impo />} />
 
-            <Route path="/contact/dlno/add" element={<AddDlno />} />
-            <Route path="/contact/ps/add" element={<AddPso />} />
-            <Route path="/contact/ac/add" element={<AddAc />} />
-            <Route path="/contact/impo/add" element={<AddImpo />} />
+              <Route path="/contact/dlno/add" element={<AddDlno />} />
+              <Route path="/contact/ps/add" element={<AddPso />} />
+              <Route path="/contact/ac/add" element={<AddAc />} />
+              <Route path="/contact/impo/add" element={<AddImpo />} />
 
-            <Route path="/contact/add/dlno/add" element={<AddDlno />} />
-            <Route path="/contact/add/ps/add" element={<AddPso />} />
-            <Route path="/contact/add/ac/add" element={<AddAc />} />
-            <Route path="/contact/add/impo/add" element={<AddImpo />} />
-          </Routes>
+              <Route path="/contact/add/dlno/add" element={<AddDlno />} />
+              <Route path="/contact/add/ps/add" element={<AddPso />} />
+              <Route path="/contact/add/ac/add" element={<AddAc />} />
+              <Route path="/contact/add/impo/add" element={<AddImpo />} />
+            </Routes>
+          </div>
         </div>
-      </div>
+      )}
     </BrowserRouter>
   );
 }
