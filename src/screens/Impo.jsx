@@ -43,7 +43,7 @@ function Impo() {
   const handleDelete = async (id) => {
     try {
       // console.log(id);
-      await remove(ref(db, `ac/${id}`)); // Remove the item from Firebase
+      await remove(ref(db, `impo/${id}`)); // Remove the item from Firebase
       setData(data.filter((item) => item.id !== id)); // Update state to remove the item from the table
     } catch (error) {
       console.error("Error deleting item:", error);
