@@ -1,0 +1,60 @@
+.notifyStatus {
+  margin: 20px 0;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.notification {
+  display: flex;
+  flex-direction: column;
+  margin: 30px 0;
+  align-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.msgConatiner {
+  display: flex;
+  width: 25rem;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+  gap: 20px;
+  border-radius: 13px;
+  background: var(--light);
+  box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.actionBtn {
+  padding: 10px 40px;
+  border-radius: 9px;
+  background: linear-gradient(
+    101deg,
+    #007ec5 -34.36%,
+    #002d47 46.65%,
+    #002d47 100%
+  );
+  color: #ffff;
+}
+.dismissBtn {
+  padding: 10px 40px;
+  border-radius: 9px;
+  border: 1px solid #002d47;
+  background: #f0f0f0;
+  color: #002d47;
+}
+
+.btnContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.btnContainer a {
+  text-decoration: none;
+  font-size: 14px;
+}
+.link {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

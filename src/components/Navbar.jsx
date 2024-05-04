@@ -11,6 +11,9 @@ function Navbar() {
           <NavLink to="/">Dashboard</NavLink>
         </li>
         <li>
+          <NavLink to="/notify">Notification</NavLink>
+        </li>
+        <li>
           <NavLink to="/place">Manage AC</NavLink>
         </li>
         <li>

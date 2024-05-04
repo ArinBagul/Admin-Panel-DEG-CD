@@ -28,6 +28,7 @@ import AddAc from "./screens/AddAc";
 import Impo from "./screens/Impo";
 import AddImpo from "./screens/AddImpo";
 import LoginScreen from "./screens/LoginScreen";
+import Notification from "./screens/Notification";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -92,6 +93,12 @@ function App() {
               <Route path="/ps" element={<Ps />} />
               <Route path="/team" element={<Team />} />
               <Route path="/place" element={<Place />} />
+              <Route path="/notify" element={<Notification />} />
+              <Route path="/notify/add" element={<Notification />} />
+              <Route path="/notification" element={<Notification />} />
+              <Route path="/notification/add" element={<Notification />} />
+              <Route path="/message" element={<Notification />} />
+              <Route path="/message/add" element={<Notification />} />
 
               <Route path="/*" element={<FileNotFound />} />
 
